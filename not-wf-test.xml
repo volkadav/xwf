@@ -1,0 +1,4 @@
+<foo>
+	<bar>example text</bar>
+	<baz><quux>more text, this is invalid tag nesting</baz></quux>
+</foo>
