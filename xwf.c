@@ -109,7 +109,7 @@ int main(int argc, char** argv) {
 		/* "1" above is the parameter 'isFinal', i.e. no more doc content */	
 		if (verbose == 1) {
 			printf("'%s' is NOT well-formed XML.\n",argv[filearg]);
-			printf("%s on line %d.\n",
+			printf("%s on line %lu.\n",
 					XML_ErrorString(XML_GetErrorCode(parser)),
 					XML_GetCurrentLineNumber(parser));
 		}
@@ -118,7 +118,7 @@ int main(int argc, char** argv) {
 			curpath = (char *)malloc(strlen(argv[filearg]) + 1); /* +1 for terminal \0 */
 			
 			if (curpath == NULL) {
-				fprintf(stderr,"Can't allocate %d bytes of memory for file processing.\n",
+				fprintf(stderr,"Can't allocate %lu bytes of memory for file processing.\n",
 						strlen(argv[filearg]));
 				XML_ParserFree(parser);
 				free(buffer);

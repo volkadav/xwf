@@ -16,12 +16,9 @@ MODE=0555
 
 ############################
 
-${PROGNAME}: xwf.o
-	${CC} ${CCFLAGS} -o ${PROGNAME} xwf.o
+${PROGNAME}: xwf.c
+	${CC} xwf.c ${CCFLAGS} -o ${PROGNAME}
 	
-xwf.o: xwf.c
-	${CC} -c xwf.c
-
 install:
 	/usr/bin/install --mode ${MODE} --owner ${OWNER} --group ${GROUP} ./${PROGNAME} ${INSTPATH}/${PROGNAME}
 
