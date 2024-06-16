@@ -1,2 +1,3 @@
 *.o
 xwf
+.ccls-cache/
